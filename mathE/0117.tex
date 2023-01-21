@@ -1,0 +1,328 @@
+\documentclass[pdflatex,ja=standard,fleqn]{bxjsarticle}
+\usepackage{ascmac,amsmath,amssymb,type1cm}
+\title{数学IEレポート1}
+\author{J4-210447 川村朋広}
+\begin{document}
+\maketitle
+\section*{問1}
+\subsection*{(a)}
+\begin{screen}
+    $y^{\prime}=(x+1)^2(y+1)$ 
+\end{screen}
+【解答】\\
+$y\neq-1$のときを考え、両辺を$y+1$で割ると、
+\begin{eqnarray*}\frac{y^{\prime}}{y+1}=(x+1)^2\end{eqnarray*}
+両辺を積分すると
+\begin{eqnarray*}\int \frac{dy}{y+1}=\int (x+1)^2dx\end{eqnarray*}
+\begin{eqnarray*}{\rm log}|y+1|
+    &=&\frac{1}{3}(x+1)^3+C_{1}\\
+    &=&\frac{1}{3}x^3+x^2+x+C_{2}
+\end{eqnarray*}
+ただし、$C_{1}$と$C_{2}$は実定数である。したがって実定数$A$を用いて、
+\begin{eqnarray*}y = Ae^{\frac{1}{3}x^3+x^2+x}-1\end{eqnarray*}
+尚、$y=-1$も解であるが上記の一般解に含まれる。
+
+\subsubsection*{(b)}
+\begin{screen}
+    $y^{\prime}+2y={\rm cos}x$ 
+\end{screen}
+【解答】\\
+まず、特殊解を求める\par
+特殊解$y_{0}$を
+\begin{eqnarray*}y_{0}=\alpha{\rm sin}x+\beta{\rm cos}x\end{eqnarray*}
+と仮定する。この時、代入して整理すると、
+\begin{eqnarray*}(\alpha+2\beta){\rm cos}x+(2\alpha-\beta){\rm sin}x={\rm cos}x\end{eqnarray*}
+したがって、
+\begin{eqnarray*}
+    \begin{cases} 
+        \alpha+2\beta=1 \\ 
+        2\alpha-\beta=0
+    \end{cases}
+\end{eqnarray*}
+これを解くと、$(\alpha,\beta)=(\frac{1}{5},\frac{2}{5})$が得られるので
+\begin{eqnarray*}y_{0}=\frac{{\rm sin}x+2{\rm cos}x}{5}\end{eqnarray*}
+次に、微分方程式
+\begin{eqnarray*}y^{\prime}+2y=0\end{eqnarray*}
+の一般解を求める。$y\ne0$として、両辺を$y$で割ると
+\begin{eqnarray*}\frac{dy}{y}=-2\end{eqnarray*}
+両辺を積分して、
+\begin{eqnarray*}\int \frac{dy}{y}=-2\int dx\end{eqnarray*}
+積分定数$C$および実定数$A$を用いて、
+\begin{align*}
+    &{\rm log}|y|=-2x+C\\
+    &y=Ae^{-2x}\end{align*}
+これは$y=0$の場合も含む。以上より、一般解yは
+\begin{eqnarray*}y(x)=Ae^{-2x}+\frac{{\rm sin}x+2{\rm cos}x}{5}\end{eqnarray*}
+
+\subsection*{(c)}
+\begin{screen}
+    $4y^{\prime\prime}+12y^{\prime}+9y=0$ 
+\end{screen}
+【解答】\\
+$y=e^{\lambda x}$が解に含まれるとする。この時、与式に代入して整理すると
+\begin{align*}
+    &e^{\lambda x}(4\lambda^2+12\lambda+9)=0\\
+    &e^{\lambda x}(2\lambda+3)^2=0\\
+    &\lambda=-\frac{3}{2}
+\end{align*}
+したがって、一般解$y$は実数$C_{1}$と$C_{2}$を用いて
+\begin{eqnarray*}y(x)=C_{1}e^{-\frac{3}{2}x}+C_{2}xe^{-\frac{3}{2}x}\end{eqnarray*}
+である
+\subsection*{(d)}
+\begin{screen}
+    $y^{\prime\prime}-2y^{\prime}+5y=2{\rm cos^2}x$ 
+\end{screen}
+【解答】\\
+まず、微分方程式
+\begin{eqnarray}y^{\prime\prime}-2y^{\prime}+5y=0\end{eqnarray}
+の解を考える。解の形が$e^{\lambda x}$で与えられるとすると
+\begin{eqnarray*}e^{\lambda x}(\lambda^2-2\lambda+5)=0\end{eqnarray*}
+となるから、
+\begin{eqnarray*}\lambda=1+2i,1-2i\end{eqnarray*}
+今、
+\begin{eqnarray*}y_{1}(x)=e^{x}{\rm cos}2x\\y_{2}(x)=e^{x}{\rm sin}2x\end{eqnarray*}
+と置くと、これらは(1)の解である。
+特殊解を
+\begin{eqnarray*}y_{0}(x)=c_{1}(x)y_{1}(x)+c_{2}(x)y_{2}(x)\end{eqnarray*}
+と置くと、一般解は実数$D_{1},D_{2}$を用いて
+\begin{eqnarray*}
+    y(x)=D_{1}y_{1}(x)+D_{2}y_{2}(x)+y_{0}(x)
+\end{eqnarray*}
+と表される。なお、$c_{1}$と$c_{2}$については以下のように求まる。
+\begin{align*}
+    &y_{1}^{\prime}=e^{x}({\rm cos}2x-2{\rm sin}2x)\\
+    &y_{2}^{\prime}=e^{x}({\rm sin}2x+2{\rm cos}2x)
+\end{align*}
+であるから,
+\begin{eqnarray*}
+\begin{vmatrix}y_{1}&y_{2}\\y_{1}^{\prime}&y_{2}^{\prime}\end{vmatrix}
+&=&e^{2x}{\lbrace{\rm cos}2x({\rm sin}2x+2{\rm cos}2x)-{\rm sin}2x({\rm cos}2x-2{\rm sin}2x)}\rbrace \\
+&=&2e^{2x}({\rm cos^2}2x+{\rm sin^2}2x) \\
+&=&2e^{2x}
+\end{eqnarray*}
+である。よって、
+\begin{align*}
+    &c_{1}^{\prime}=-\frac{y_{2}(2{\rm cos^2}x)}{2e^{2x}}=-e^{-x}{\rm sin}2x{\rm cos^2}x\\
+    &c_{2}^{\prime}=\frac{y_{1}(2{\rm cos^2}x)}{2e^{2x}}=e^{-x}{\rm cos}2x{\rm cos^2}x
+\end{align*}
+これより、
+\begin{eqnarray*}
+    c_{1}(x)
+    &=&\int -e^{-x}{\rm sin}2x{\rm cos^2}xdx\\
+    &=&\int -e^{-x}{\rm sin}2x\frac{1+{\rm cos}2x}{2}dx\\ 
+    &=&-\frac{1}{2}\int e^{-x}{\rm sin}2xdx-\frac{1}{4}\int e^{-x}{\rm sin}4xdx\\
+    &=&-\frac{1}{2}\frac{e^{-x}}{5}(-{\rm sin}2x-2{\rm cos}2x)-\frac{1}{4}\frac{e^{-x}}{17}(-{\rm sin}4x-4{\rm cos}4x)+D_{3}\\
+    &=&\frac{e^{-x}}{4}{\lbrace \frac{2}{5}({\rm sin}2x+2{\rm cos}2x)+\frac{1}{17}({\rm sin}4x+4{\rm cos}4x)}\rbrace+D_{3}
+\end{eqnarray*}
+\begin{eqnarray*}
+    c_{2}(x)
+    &=&\int e^{-x}{\rm cos}2x{\rm cos^2}xdx\\
+    &=&\int e^{-x}{\rm cos}2x\frac{1+{\rm cos}2x}{2}dx\\ 
+    &=&\frac{1}{2}\int e^{-x}{\rm cos}2xdx+\frac{1}{4}\int e^{-x}{\rm cos}4xdx+\frac{1}{4}\int e^{-x}dx\\
+    &=&\frac{1}{2}\frac{e^{-x}}{5}(2{\rm sin}2x-{\rm cos}2x)+\frac{1}{4}\frac{e^{-x}}{17}(4{\rm sin}4x-{\rm cos}4x)-\frac{1}{4}e^{-x}+D_{4}\\
+    &=&\frac{e^{-x}}{4}{\lbrace \frac{2}{5}(2{\rm sin}2x-{\rm cos}2x)+\frac{1}{17}(4{\rm sin}4x-{\rm cos}4x)-1}\rbrace+D_{4}
+\end{eqnarray*}
+なお、$D_{3},D_{4}$は実定数である、よって
+\begin{eqnarray*}
+    y_{0}(x)=\frac{1}{5}-\frac{1}{17}{\rm cos}2x-\frac{9}{34}{\rm sin}2x
+\end{eqnarray*}
+したがって、一般解は
+\begin{eqnarray*}
+    y(x)=D_{1}e^{x}{\rm cos}2x+D_{2}e^{x}{\rm sin}2x-\frac{1}{17}{\rm cos}2x-\frac{9}{34}{\rm sin}2x+\frac{1}{5}
+\end{eqnarray*}
+\subsection*{(e)}
+\begin{screen}
+    $(\frac{1}{2}-\frac{1}{y})+\frac{x}{y^2}y^{\prime}=0$ 
+\end{screen}
+【解答】\\
+$x\ne0$かつ$y\ne0$かつ$y\ne2$の時、式変形すると
+\begin{align*}
+    &\frac{dx}{x}+\frac{2dy}{y^2-2y}=0\\
+    &\int \frac{dx}{x}+\int (\frac{1}{y-2}-\frac{1}{y})dy=C\\
+    &{\rm log}|x|+{\rm log}\left|\frac{y-2}{y}\right|=C\\
+    &\frac{y-2}{y}=Ae^{-x}
+\end{align*}
+となる。なおC及びAは実定数である。
+\begin{eqnarray*}
+    y(x)=\frac{2}{1-Ae^{-x}}
+\end{eqnarray*}
+が一般解となる。なお$y=2$もそれに含まれる。
+\subsection*{(f)}
+\begin{screen}
+    \begin{eqnarray*}
+        \begin{cases}
+            y_{1}^{\prime}-2y_{2}^{\prime}+4y_{2}=0\\
+            3y_{1}^{\prime}-2y_{2}^{\prime}-4y_{1}=0\\
+        \end{cases}
+    \end{eqnarray*}
+\end{screen}
+【解答】\\
+連立微分方程式を行列で書き直すと
+\begin{align}
+    &\begin{pmatrix}1&-2\\3&-2\end{pmatrix}\begin{pmatrix}y_{1}^{\prime}\\y_{2}^{\prime}\end{pmatrix}=4\begin{pmatrix}-y_{2}\\y_{1}\end{pmatrix}\\
+    &\begin{pmatrix}y_{1}^{\prime}\\y_{2}^{\prime}\end{pmatrix}=\begin{pmatrix}2&2\\1&3\end{pmatrix}\begin{pmatrix}y_{1}\\y_{2}\end{pmatrix}
+\end{align}
+となる。この連立微分方程式の解が
+\begin{eqnarray}
+    \begin{pmatrix}y_{1}\\y_{2}\end{pmatrix}=e^{\lambda x}\begin{pmatrix}\phi_{1}\\\phi_{2}\end{pmatrix}
+\end{eqnarray}
+であると仮定すると、(4)を(3)に代入して整理すると
+\begin{eqnarray*}
+    \lambda\begin{pmatrix}\phi_{1}\\\phi_{2}\end{pmatrix}=\begin{pmatrix}2&2\\1&3\end{pmatrix}\begin{pmatrix}\phi_{1}\\\phi_{2}\end{pmatrix}
+\end{eqnarray*}
+これが$\phi_{1}\ne0$かつ$\phi_{2}\ne0$を満たす解を持つとき、
+\begin{eqnarray*}
+    \begin{vmatrix}2-\lambda&2\\1&3-\lambda\end{vmatrix}
+    &=&(2-\lambda)(3-\lambda)-2\\
+    &=&(\lambda-1)(\lambda-4)\\
+    &=&0
+\end{eqnarray*}
+したがって$\lambda=1$または$4$である\\
+$\lambda=1$のとき
+\begin{eqnarray*}
+    \begin{pmatrix}1&2\\1&2\end{pmatrix}\begin{pmatrix}\phi_{1}\\\phi_{2}\end{pmatrix}=\boldsymbol{0}
+\end{eqnarray*}
+となり、これを満たす固有ベクトルの一つは
+$\begin{pmatrix}2\\-1\end{pmatrix}$
+である\\
+$\lambda=4$のとき
+\begin{eqnarray*}
+    \begin{pmatrix}-2&2\\1&-1\end{pmatrix}\begin{pmatrix}\phi_{1}\\\phi_{2}\end{pmatrix}=\boldsymbol{0}
+\end{eqnarray*}
+となり、固有ベクトルの一つは$\begin{pmatrix}1\\1\end{pmatrix}$である\\
+以上より、一般解は実定数$C_{1},C_{2}$を用いて
+\begin{eqnarray*}
+    \begin{pmatrix}y_{1}\\y_{2}\end{pmatrix}=C_{1}e^{x}\begin{pmatrix}2\\-1\end{pmatrix}+C_{2}e^{4x}\begin{pmatrix}1\\1\end{pmatrix}
+\end{eqnarray*}
+と表される
+\begin{itembox}[l]{補題}
+    $(a,b)\ne(0,0)$のとき
+    \begin{align*}
+        &\int e^{ax}{\rm sin}bxdx=\frac{e^{ax}}{a^2+b^2}(a{\rm sin}bx-b{\rm cos}bx)+C_{1}\\
+        &\int e^{ax}{\rm cos}bxdx=\frac{e^{ax}}{a^2+b^2}(b{\rm sin}bx+a{\rm cos}bx)+C_{2}
+    \end{align*}
+\end{itembox}
+【証明】
+\begin{eqnarray*}
+    I&=&\frac{d}{dx}(e^{ax}{\rm sin}bx)\\
+    &=&e^{ax}(a{\rm sin}bx+b{\rm cos}bx)
+\end{eqnarray*}
+\begin{eqnarray*}
+    J&=&\frac{d}{dx}(e^{ax}{\rm cos}bx)\\
+    &=&e^{ax}(a{\rm cos}bx-b{\rm sin}bx) 
+\end{eqnarray*}
+とそれぞれおく。つまり
+\begin{eqnarray*}
+    \begin{pmatrix}I\\J\end{pmatrix}=\begin{pmatrix}a&b\\-b&a\end{pmatrix}\begin{pmatrix}e^{ax}{\rm sin}bx\\e^{ax}{\rm cos}bx\end{pmatrix}
+\end{eqnarray*}
+となるので、
+\begin{eqnarray*}
+    \begin{pmatrix}e^{ax}{\rm sin}bx\\e^{ax}{\rm cos}bx\end{pmatrix}
+    &=&\begin{pmatrix}a&b\\-b&a\end{pmatrix}^{-1}\begin{pmatrix}I\\J\end{pmatrix}\\
+    &=&\frac{1}{a^2+b^2}\begin{pmatrix}a&-b\\b&a\end{pmatrix}\begin{pmatrix}I\\J\end{pmatrix}\\
+    &=&\frac{1}{a^2+b^2}\begin{pmatrix}aI-bJ\\bI+aJ\end{pmatrix}\\
+    &=&\frac{d}{dx}\frac{e^{ax}}{a^2+b^2}\begin{pmatrix}a{\rm sin}bx-b{\rm cos}bx\\a{\rm cos}bx+b{\rm sin}bx\end{pmatrix}
+\end{eqnarray*}
+両辺を$x$で積分すると目的の式が導出される
+\section*{問2}
+\subsection*{(a)}
+\begin{screen}
+    講義で取り上げたエルミートの微分方程式・多項式について調べ，自由に記述せよ
+\end{screen}
+エルミート微分方程式とは$m\in\mathbb{Z}$として
+\begin{eqnarray*}
+    (\frac{d^2}{dx^2}-2x\frac{d}{dx}+2m)H_{m}(x)=0
+\end{eqnarray*}
+の形をした微分方程式のことをさす\\
+この微分方程式の級数解$H_{m}(x)$をエルミート多項式といい
+\begin{eqnarray*}
+    H_{m}(x)=\sum_{n=1}^{\infty} a_{n}x^{n}
+\end{eqnarray*}
+とあらわされる。\\
+微分方程式に代入して整理すると
+\begin{eqnarray*}
+    \sum_{n=1}^{\infty} [(n+2)(n+1)a_{n+2}-2na_{n}+2ma_{n}] x^{n}=0
+\end{eqnarray*}
+各項が$0$であることより、以下のような漸化式が導かれる
+\begin{align*}
+    &(n+2)(n+1)a_{n+2}-(2n-2m)a_{n}=0\\
+    &a_{n+2}=\frac{2n-2m}{(n+2)(n+1)}a_{n}
+\end{align*}
+$a_{0}$と$a_{1}$が決まっていれば$\forall n\in\mathbb{N}$に対して、$a_{n}$がきまる。実際に求めてみると、
+\begin{eqnarray*}
+    H_{m}(x)=m!\sum_{n=1}^{\lfloor\frac{m}{2}\rfloor} \frac{(-1)^n}{n!(m-2n)!}(2x)^{m-2n}
+\end{eqnarray*}
+となる。\\
+【ほかの性質】\\
+重み関数$e^{-x^2}$として直交性を持つ
+\begin{eqnarray*}
+    \int_{-\infty}^{\infty} H_{m}(x)H_{n}(x)e^{-x^2}dx=\sqrt{\pi}2^{n}n!\delta_{i,j}
+\end{eqnarray*}
+ロドリゲスの公式
+\begin{eqnarray*}
+    H_{m}(x)=(-1)^{m}e^{x^2}\frac{d^m}{dx^m}e^{-x^2}
+\end{eqnarray*}
+母関数について
+\begin{eqnarray*}
+    e^{-y^2+2xy}=\sum_{m=0}^{\infty}H_{m}(x)\frac{y^m}{m!}
+\end{eqnarray*}
+周回積分であらわされる
+\begin{eqnarray*}
+    H_{m}(x)=\oint_C \frac{e^{-z^2+2xz}}{z^{m+1}}dz
+\end{eqnarray*}
+\subsection*{(b)}
+\begin{screen}
+    常微分方程式の数値計算法について調べ，自由に記述せよ
+\end{screen}
+微分方程式
+\begin{align*}
+    &\frac{dy}{dx}=f(x,y)\\
+    &y(x_{0})=y_{0}
+\end{align*}
+について考える。数値計算法の方法論はオイラー法とルンゲクッタ型方式がある。\\
+【オイラー法】\\
+初期値$x_{0}$からはじめて、刻み幅を$h$として、$x_{1}=x_{0}+h,x_{2}=x_{1}+h,...$における$y(x)$の値を順次求めていく。今、曲線の傾きが$f(x,y)$であることがわかるので、$i\in\mathbb{N}$に対して
+\begin{eqnarray*}
+    y(x_{i})=y(x_{i-1})+hf(x_{i-1},y_{i-1})
+\end{eqnarray*}
+と近似できる。こうして、再帰関数をもちいてプログラムを組むと微分方程式をコンピューター上で解くことができる。なお、誤差をできるだけ小さくするために$h$は限りなく$0$に近い値を用いる必要がある。このように$x=x_{i}$の右側で近似し、前のデータから次のデータを求めるオイラー法のことを特に、前進差分という。一方、$x=x_{0i}$よりも左側で近似すると
+\begin{eqnarray*}
+    y(x_{i+1})=y(x_{i})+hf(x_{i+1},y_{i+1})
+\end{eqnarray*}
+とあらわすことができる。このとき、後($i+1$のとき)の値から、前の値($i$のとき)の値が求まる。これを後退差分という。\\
+しかし、理論的には誤差が小さくなるオイラー法だが、実際は
+\begin{itemize}
+    \item 刻み幅を小さくすることで計算量がふえる
+    \item 刻み幅が小さくなると、丸め誤差が増える
+    \item 計算回数が増えると、誤差の累積が多くなる
+\end{itemize}
+といった問題点がある。\\
+【ルンゲクッタ型方式】\\
+上記のオイラー法における欠点を補っているのが、ここで紹介するルンゲクッタ法である\\
+テーラー展開の2次項までで近似すると
+\begin{eqnarray*}
+    y(x+h)&\approx& y(x)+h\frac{dy}{dx}+\frac{h^2}{2}\frac{d^2}{dx^2}\\
+    &=& y(x)+hf(x,y)+\frac{h^2}{2}\frac{df(x,y)}{dx}
+\end{eqnarray*}
+ここで、刻み幅を$kh$とする
+\begin{eqnarray*}
+    \frac{df(x,y)}{dx}&\approx& \frac{f(x+kh,y(x+kh))-f(x,y)}{kh}\\
+    &\approx& \frac{f(x+kh,y(x)+khf(x,y))-f(x,y)}{kh}
+\end{eqnarray*}
+と書ける。\\
+$k=1$の時、ホイン法と呼ばれていて、
+\begin{eqnarray*}
+    y(x+h)=y(x)+\frac{h}{2}f(x,y)+\frac{h}{2}f(x+h,y(x)+hf(x,y))
+\end{eqnarray*}
+とあらわされる。\\
+$k=\frac{1}{2}$の時は、修正オイラー法と呼ばれており
+\begin{eqnarray*}
+    y(x+h)=y(x)+hf(x+\frac{h}{2},y(x)+\frac{h}{2}f(x,y))
+\end{eqnarray*}
+と表される。
+\section*{参考文献}
+\begin{itemize}
+    \item 東京大学工学部精密工学科「常微分方程式の数値解法」
+    \item 永宮健夫「微分方程式論」
+\end{itemize}
+\end{document}
