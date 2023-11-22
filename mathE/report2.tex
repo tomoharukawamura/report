@@ -211,4 +211,41 @@ $T=\left\{(r,\theta,z)|0\leq r\leq 1,0\leq \theta\leq\pi,-1\leq z\leq 1\right\}$
 \begin{screen}
     電磁気学における，マクスウェル方程式と電磁波の関係について調べ，ベクトル解析の知識を用いて記述せよ
 \end{screen}
+電荷も電流もない、つまり$\boldsymbol{j}=\boldsymbol{0},\rho=0$をみたす空間に時間的に変化する電場$\boldsymbol{E}$と磁場$\boldsymbol{B}$が存在するとする。Maxwell方程式は、
+\begin{align*}
+    &{\mathrm{div}}\boldsymbol{E}=0\\
+    &{\mathrm{div}}\boldsymbol{B}=0\\
+    &{\mathrm{rot}}\boldsymbol{E}=-\frac{\partial\boldsymbol{E}}{\partial t}\\
+    &{\mathrm{rot}}\boldsymbol{B}=\epsilon_{0}\mu_{0}\frac{\partial\boldsymbol{B}}{\partial t}
+\end{align*}
+である。電場と磁場が空間的に$x$だけの関数であるとする。この時、各ベクトルの成分について次の式が成り立つ。
+\begin{eqnarray*}
+    0=\frac{\partial B_{x}}{\partial t}\quad
+    \frac{\partial E_{z}}{\partial x}=\frac{\partial B_{y}}{\partial t}\quad
+    \frac{\partial E_{y}}{\partial x}=-\frac{\partial B_{z}}{\partial t}
+\end{eqnarray*}
+\begin{eqnarray*}
+    0=\frac{\partial E_{x}}{\partial t}\quad
+    \frac{\partial B_{z}}{\partial x}=-\epsilon_{0}\mu_{0}\frac{\partial E_{z}}{\partial t}\quad
+    \frac{\partial E_{y}}{\partial x}=\epsilon_{0}\mu_{0}\frac{\partial B_{z}}{\partial t}
+\end{eqnarray*}
+$E_{x}$と$B_{x}$はともに定数より、$E_{x}=B_{x}=0$とする。このとき、$y$成分と$z$成分について、以下の式が成り立つ。
+\begin{align*}
+        &\frac{\partial^2E_{z}}{\partial t^2}=\frac{1}{\epsilon_{0}\mu_{0}}\frac{\partial^2 E_{z}}{\partial x^2}\\
+        &\frac{\partial^2E_{y}}{\partial t^2}=\frac{1}{\epsilon_{0}\mu_{0}}\frac{\partial^2 E_{y}}{\partial x^2}
+\end{align*}
+または、
+\begin{align*}
+    &\frac{\partial^2E_{y}}{\partial t^2}=\frac{1}{\epsilon_{0}\mu_{0}}\frac{\partial^2 E_{y}}{\partial x^2}\\
+    &\frac{\partial^2E_{z}}{\partial t^2}=\frac{1}{\epsilon_{0}\mu_{0}}\frac{\partial^2 E_{z}}{\partial x^2}
+\end{align*}
+が得られる。このことから、電場と磁場は波の進行方向に垂直になっており、振動方向は互いに垂直であることがわかる。のこれらの式は波動方程式の形をしているのがわかるので、電磁波の進行速度$c$は
+\begin{eqnarray*}
+    c=\frac{1}{\sqrt{\epsilon_{0}\mu_{0}}}
+\end{eqnarray*}
+とあらわされるのがわかる。なお、ファラデーはこれが光の速度と一致しているという光伝播説を唱えた。
+\section*{参考文献}
+\begin{itemize}
+    \item 「電磁波 電磁気学」(EMANの物理学)
+\end{itemize}
 \end{document}

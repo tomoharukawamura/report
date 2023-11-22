@@ -1,0 +1,147 @@
+\documentclass[pdflatex,ja=standard,fleqn]{bxjsarticle}
+\usepackage{ascmac,amsmath,amssymb,type1cm,graphicx}
+\title{数学IEレポート2}
+\author{J4-210447 川村朋広}
+\begin{document}
+\maketitle
+
+\section*{問1}
+\subsection*{(a)}
+\begin{screen}　
+    汎関数
+    \begin{eqnarray*}
+        I \left[f\right]=\int_{x_{0}}^{x_{1}} \frac{\sqrt{1+(f^{\prime})^2}}{x}dx
+    \end{eqnarray*}
+    の停留関数$f(x)$を固定端条件下で求めよ
+\end{screen}
+【解答】
+\begin{eqnarray*}
+    F(x,y,z)=\frac{\sqrt{1+z^2}}{x}
+\end{eqnarray*}
+とおく。$F(x)$は第1,3変数に対して凸より、停留関数$f(x)$は、以下の条件をみたす。
+\begin{align*}
+    &\frac{d}{dx}\left\{F_{z}\left[f(x)\right]\right\}=F_{y}\left[f(x)\right]\\
+    &f(x_{0})=A\quad f(x_{1})=B
+\end{align*}
+ただし,$A,B\in\mathbb{R}$である。
+\begin{align*}
+    &F_{z}=\frac{z}{x\sqrt{1+z^2}}\\
+    &F_{y}=0
+\end{align*}
+であることより第1式は以下のように変形できる。
+\begin{eqnarray*}
+    \frac{d}{dx} \frac{f^{\prime}}{x\sqrt{1+(f^{\prime})^2}}=0
+\end{eqnarray*}
+$C^{\prime}\in\mathbb{R}$を用いて、
+\begin{eqnarray*}
+    \frac{f^{\prime}}{x\sqrt{1+(f^{\prime})^2}}=C^{\prime}
+\end{eqnarray*}
+とあらわされる。これをべつの$c\in\mathbb{R}$を用いて変形すると以下のようになる。
+\begin{eqnarray*}
+    f^{\prime}(x)=\frac{cx}{\sqrt{1-c^2x^2}}
+\end{eqnarray*}
+これをとくと、$d\in\mathbb{R}$を用いて、
+\begin{eqnarray*}
+    f(x)=-\frac{1}{c}(1-c^2x^2)^{\frac{1}{2}}+d
+\end{eqnarray*}
+となる。境界条件の第2,3式より
+\begin{align*}
+    &\frac{1}{c}=x_{1}^2+\left(\frac{x_{1}^2-x_{2}^2}{2(A-B)}+B\right)^2\\
+    &d=\frac{x_{1}^2-x_{2}^2}{2(A-B)}+A+B
+\end{align*}
+を満たすことがわかる。
+\subsection*{(b)}
+\begin{screen}
+    汎関数
+    \begin{eqnarray*}
+        I\left[f\right]=\int_{0}^{1} \left\{(f^{\prime})^2+2ff^{\prime}+4f^2\right\}dx
+    \end{eqnarray*}
+    に対し、\\
+    (b-1) 固定端条件下での停留関数$f(x)$に対する微分方程式を導き一般解を求めよ。\\
+    (b-2) 固定端条件$f(0)=0,f(1)=1$から停留関数を求めよ。\\
+    (b-3) 汎関数に代入し、その極値を求めよ。
+\end{screen}
+【解答】\\
+(b-1)\\
+関数$F(x,y,z)$を$F(x,y,z)=4y^2+2yz+z^2$と定める。
+\begin{align*}
+    &F_{y}=8y+2z\\
+    &F_{z}=2y+2z
+\end{align*}
+より、停留関数$f$の満たす微分方程式は、
+\begin{align*}
+    &\frac{d}{dx}\left(2f(x)+2f^{\prime}(x)\right)=8f(x)+2f^{\prime}(x)\\
+    &2f^{\prime}+2f^{\prime\prime}(x)=8f(x)+2f^{\prime}(x)\\
+    &f^{\prime\prime}(x)=4f(x)
+\end{align*}
+となる。したがって一般解は$A,B\in\mathbb{R}$を用いて
+\begin{eqnarray*}
+    f(x)=A\mathrm{sin}2x+B\mathrm{cos}2x
+\end{eqnarray*}7
+と表される。\\
+(b-2)\\
+固定端条件より$\left(A,B\right)=\left(0,\frac{1}{\mathrm{sin}2}\right)$であるから、
+\begin{eqnarray*}
+    f(x)=\frac{\mathrm{sin}2x}{\mathrm{sin}2}
+\end{eqnarray*}
+となる。\\
+(b-3)\\
+(b-2)より、
+\begin{eqnarray*}
+    f^{\prime}(x)=\frac{2\mathrm{cos}2x}{\mathrm{sin}2}
+\end{eqnarray*}
+であるから、
+\begin{eqnarray*}
+    I\left[f\right]&=&\frac{1}{\mathrm{sin}^{2}2}\int_{0}^{1} \left(4\mathrm{cos}^{2}2x+4\mathrm{cos}2x\mathrm{sin}2x+4\mathrm{sin}^{2}2x\right)dx\\
+    &=&\frac{4}{\mathrm{sin}^{2}2}\int_{0}^{1} \left(1+\frac{\mathrm{sin}4x}{2}\right)dx\\
+    &=&\frac{\left(9-\mathrm{cos}4\right)}{2\mathrm{sin}^{2}2}
+\end{eqnarray*}
+と求まる。
+\subsection*{(c)}
+\begin{screen}
+    講義で、2次元平面上のポテンシャル$V(x,y)$下での質点の運動について、極座標系においても2変数$r(t),\theta(t)$についての汎関数で定義された、作用$S$に対するオイラーラグランジュ方程式から運動方程式を導き出せることを見た。\\
+    (c-1)$S$の被積分関数$L$(ラグラジアン)が時間$t$によらないとき。以下の方程式がなりたつことを示せ。
+    \begin{eqnarray*}
+        \frac{d}{dt} \left(L-\dot{r}\frac{\partial L}{\partial\dot{r}}-\dot{\theta}\frac{\partial L}{\partial\dot{\theta}}\right)=0
+    \end{eqnarray*}
+    (c-2)講義で扱った$L$の表式を上式に代入し、エネルギー保存則を導け。
+\end{screen}
+【解答】\\
+(c-1)
+\begin{eqnarray*}
+    \frac{\partial L}{\partial t}=0
+\end{eqnarray*}
+より、ラグラジアンの時間微分は以下のようになる。
+\begin{eqnarray*}
+    \frac{dL}{dt}&=&\frac{dr}{dt}\frac{\partial L}{\partial r}+\frac{d\dot{r}}{dt}\frac{\partial L}{\partial\dot{r}}+\frac{d\theta}{dt}\frac{\partial L}{\partial\theta}+\frac{d\dot{\theta}}{dt}\frac{\partial L}{\partial\dot{\theta}}\\
+    &=&\dot{r}\frac{d}{dt}\frac{\partial L}{\partial\dot{r}}+\ddot{r}\frac{\partial L}{\partial\dot{r}}+\dot{\theta}\frac{d}{dt}\frac{\partial L}{\partial\dot{\theta}}+\ddot{\theta}\frac{\partial L}{\partial\dot{\theta}}\\
+    &=&\frac{d}{dt}\left(\dot{r}\frac{\partial L}{\partial\dot{r}}\right)+\frac{d}{dt}\left(\dot{\theta}\frac{\partial L}{\partial\dot{\theta}}\right)
+\end{eqnarray*}
+以上より、
+\begin{eqnarray*}
+    \frac{d}{dt} \left(L-\dot{r}\frac{\partial L}{\partial\dot{r}}-\dot{\theta}\frac{\partial L}{\partial\dot{\theta}}\right)=0
+\end{eqnarray*}
+が示された。\\
+(c-2)\\
+\begin{eqnarray*}
+    L=\frac{1}{2}m(\dot{x}^2+\dot{y}^2)-V
+\end{eqnarray*}
+とする。
+\begin{align*}
+    &\dot{x}=\dot{r}\mathrm{cos}\theta-r\dot{\theta}\mathrm{sin}\theta\\
+    &\dot{y}=\dot{r}\mathrm{sin}\theta+r\dot{\theta}\mathrm{cos}\theta
+\end{align*}
+となるから、$L$を極座標系に書きかえると、
+\begin{eqnarray*}
+    L=\frac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2)-V
+\end{eqnarray*}
+となる。これを先ほど示した式に代入すると、以下の式が得られる。
+\begin{eqnarray*}
+    \frac{d}{dt}\left(\frac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2)+V\right)=0
+\end{eqnarray*}
+つまり
+\begin{eqnarray*}
+    \frac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2)+V=const
+\end{eqnarray*}
+である。この式から、左辺の第1項が運動エネルギーで、第2項がポテンシャルエネルギーを表しており、その和が一定であることがわかる。これはエネルギー保存則を示している。
+\end{document}
