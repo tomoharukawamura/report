@@ -92,32 +92,32 @@ $x=0$は確定特異点より、級数解$y$は
 (b-1) $\lambda=0$のとき\\
 $a_{k}$は漸化式
 \begin{eqnarray*}
-    a_{k}=-\frac{1}{4k(k+\frac{3}{2})}a_{k-1}
+    a_{k}=-\frac{1}{2k(2k+3)}a_{k-1}
 \end{eqnarray*}
 をみたす。したがって、$a_{0}=a_{01}$とすると、
 \begin{eqnarray*}
-    a_{k} = a_{01}\prod_{l=1}^{k}\left\{-\frac{1}{4l(l+\frac{3}{2})}\right\}
+    a_{k} = a_{01}\prod_{l=1}^{k}\left\{-\frac{1}{2l(2l+3)}\right\}
 \end{eqnarray*}
 よって、基本解は
 \begin{eqnarray*}
-    y_{1}(x)=a_{01}\left[\sum_{k=1}^{\infty}\left\{\prod_{l=1}^{k}-\frac{1}{4l(l+\frac{3}{2})}\right\}x^{k}+1\right]
+    y_{1}(x)=a_{01}\left[\sum_{k=1}^{\infty}\left\{\prod_{l=1}^{k}-\frac{1}{2l(2l+3)}\right\}x^{k}+1\right]
 \end{eqnarray*}
 (b-2) $\lambda=-\frac{3}{2}$のとき\\
 $a_{k}$は漸化式
 \begin{eqnarray*}
-    a_{k}=-\frac{1}{4k(k-\frac{3}{2})}a_{k-1}
+    a_{k}=-\frac{1}{2k(2k-3)}a_{k-1}
 \end{eqnarray*}
 をみたす。したがって、$a_{0}=a_{02}$とすると、
 \begin{eqnarray*}
-    a_{k} = a_{02}\prod_{l=1}^{k}\left\{-\frac{1}{4l(l-\frac{3}{2})}\right\}
+    a_{k} = a_{02}\prod_{l=1}^{k}\left\{-\frac{1}{2l(2l-3)}\right\}
 \end{eqnarray*}
 よって、基本解は
 \begin{eqnarray*}
-    y_{2}(x)=a_{02}\left[\sum_{k=1}^{\infty}\left\{\prod_{l=1}^{k}-\frac{1}{4l(l-\frac{3}{2})}\right\}x^{k-\frac{3}{2}}+x^{-\frac{3}{2}}\right]
+    y_{2}(x)=a_{02}\left[\sum_{k=1}^{\infty}\left\{\prod_{l=1}^{k}-\frac{1}{2l(2l-3)}\right\}x^{k-\frac{3}{2}}+x^{-\frac{3}{2}}\right]
 \end{eqnarray*}
 以上より、一般解$y$は$y_{1},y_{2}$の線形結合
 \begin{eqnarray*}
-    y(x)=C_{1}y_{1}(x)+C_{2}y_{2}(x)
+    y(x)=C_{1}\left[\sum_{k=1}^{\infty}\left\{\prod_{l=1}^{k}-\frac{1}{2l(2l+3)}\right\}x^{k}+1\right]+C_{2}\left[\sum_{k=1}^{\infty}\left\{\prod_{l=1}^{k}-\frac{1}{2l(2l-3)}\right\}x^{k-\frac{3}{2}}+x^{-\frac{3}{2}}\right]
 \end{eqnarray*}
 と書ける。\\
 (c)案出した手がかり\\

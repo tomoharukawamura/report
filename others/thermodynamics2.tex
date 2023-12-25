@@ -1,0 +1,46 @@
+\documentclass[pdflatex,ja=standard,fleqn]{bxjsarticle}
+\usepackage{ascmac,amsmath,amssymb,type1cm, tikz, graphicx}
+\usetikzlibrary{intersections,calc,arrows.meta}
+
+\title{熱工学課題2}
+\author{J4-210447 川村朋広}
+\begin{document}
+\maketitle
+
+\section*{1}
+求める熱量を$\dot{q}$と置くと
+\begin{eqnarray}
+    h^{\prime\prime}\dot{M}&=&26755.7[kJ/s]\\&=&27[MW]
+\end{eqnarray}
+と求められる。
+\section*{2}
+単位時間当たりの熱量変化は
+\begin{eqnarray*}
+    -\dot{Q}=-10[MW]
+\end{eqnarray*}
+である。一方、比エンタルピーの値を$h$とおくと、
+\begin{eqnarray}
+    h&=&(1-x)\dot(h^{\prime})+xh^{\prime\prime}\\
+    &=&(1-x)(h^{\prime\prime}-r)+xh^{\prime\prime}\\
+    &=&h^{\prime\prime}-(h^{\prime\prime}-h^{\prime})(1-x)
+\end{eqnarray}
+より、比エンタルピーの変化量$dh$は、
+\begin{eqnarray*}
+    dh=-\dot{M}(h^{\prime\prime}-h^{\prime})(1-x)
+\end{eqnarray*}
+である。圧力一定なので、
+\begin{align}
+    &\dot{Q} = dh\\
+    &\dot{M}(h^{\prime\prime}-h^{\prime})(1-x)=\dot{Q}\\
+    &x=1-\frac{\dot{Q}}{\dot{M}h^{\prime\prime}-h^{\prime}}\\
+    &x=0.56
+\end{align}
+\section*{3}
+求めるエントロピーを$s$と置くと、
+\begin{eqnarray}
+    s&=&(1-x)s^{\prime}+xs^{\prime\prime}\\
+    &=&s^{\prime}+\frac{x(h^{\prime\prime}-h^{\prime})}{T}\\
+    &=&4.7
+\end{eqnarray}
+と求められる。
+\end{document}

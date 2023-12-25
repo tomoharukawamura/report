@@ -1,0 +1,65 @@
+\documentclass[pdflatex,ja=standard,fleqn]{bxjsarticle}
+\usepackage{ascmac,amsmath,amssymb,type1cm, tikz, graphicx}
+
+\title{機械力学振動課題}
+\author{J4-210447 川村朋広}
+\begin{document}
+\maketitle
+
+\section*{1}
+$x$軸を鉛直上向きを正にとる座標系で考える。重みの質量を$m(=10)$とおくと、重みの運動方程式は
+\begin{align*}
+    &m\ddot{x}=-2kx-mg\\
+    &\ddot{x}=-\frac{2k}{m}\left(x+\frac{mg}{2k}\right)
+\end{align*}
+となる。したがって固有角振動数$\omega$は
+\begin{eqnarray*}
+    \omega=\sqrt{\frac{2k}{m}}
+\end{eqnarray*}
+とあらわせることより、固有振動数$f$は
+\begin{eqnarray*}
+    f&=&\frac{\omega}{2\pi}\\
+    &=&\frac{1}{\pi}\sqrt{\frac{k}{2m}}\\
+    &=&3.9[Hz]
+\end{eqnarray*}
+と求められる。
+\section*{2}
+$x$軸を鉛直上向きを正にとる。物体が$x$変位した時の加速度計の変位を$x_{1}$とおくと運動方程式は
+\begin{eqnarray}
+    m\ddot{x}=-k(x-x_{1})-c(\dot{x}-\dot{x_{1}})
+\end{eqnarray}
+とあらわせる。ここで$x_{r}=x-x_{1}$とおくと方程式(1)は
+\begin{align*}
+    &m\ddot{x_{r}}+c\dot{x_{r}}+kx_{r}=-m\ddot{x_{1}}\\
+    &\ddot{x_{r}}+2\zeta\omega_{n}\dot{x_{r}}+\omega_{n}^{2}x_{r}=-\ddot{x_{1}}
+\end{align*}
+ただし、$\omega_{n}\equiv\sqrt{\frac{k}{m}}$、$\zeta\equiv\frac{c}{2\sqrt{mk}}$である。\\
+ここで、$x_{r}$を$z_{r}\in\mathbb{C}$に、$x_{1}$を$z_{1}\in\mathbb{C}$に置き換えて、複素数範囲の微分方程式
+\begin{eqnarray}
+    \ddot{z_{r}}+2\zeta\omega_{n}\dot{z_{r}}+\omega_{n}^{2}z_{r}=-\ddot{z_{1}}
+\end{eqnarray}
+このとき$j$を虚数単位、$A_{r},A_{1}\in\mathbb{C}$として
+\begin{align*}
+    &z_{r}=A_{r}exp(j\omega t)\\
+    &z_{1}=A_{1}exp(j\omega t)
+\end{align*}
+と置いて、方程式(2)を整理すると、
+\begin{align*}
+    &A_{r}\left[\omega_{n}^{2}-\omega^{2}+j(2\zeta\omega_{n}\omega)\right]exp(j\omega t)=A_{1}\omega^{2}exp(j\omega t)\\
+    &\frac{A_{r}}{A_{1}}=\frac{\omega^{2}}{\omega_{n}^{2}-\omega^{2}+j(2\zeta\omega_{n}\omega)}
+\end{align*}
+となる。これより、
+\begin{eqnarray*}
+    \left|\frac{A_{r}}{A_{1}}\right|^{2}&=&\frac{\omega^{2}}{\omega_{n}^{2}-\omega^{2}+j(2\zeta\omega_{n}\omega)}\frac{\omega^{2}}{\omega_{n}^{2}-\omega^{2}-j(2\zeta\omega_{n}\omega)}\\
+    &=&\frac{\omega^{4}}{(\omega_{n}^{2}-\omega^{2})^{2}+(2\zeta\omega_{n}^{2}\omega^{2})^{2}}
+\end{eqnarray*}
+$\frac{1}{p}=|\frac{A_{r}}{A_{1}}|$とおき、これを$\zeta$に関してとくと
+\begin{eqnarray*}
+    \zeta=\frac{\sqrt{\left\{(p-1)\omega^{2}+\omega_{n}^{2}\right\}\left\{(p+1)\omega^{2}-\omega_{n}^{2}\right\}}}{2\omega_{n}\omega}
+\end{eqnarray*}
+となるから
+\begin{eqnarray*}
+    c=\frac{\sqrt{mk\left\{(p-1)\omega^{2}+\omega_{n}^{2}\right\}\left\{(p+1)\omega^{2}-\omega_{n}^{2}\right\}}}{\omega_{n}\omega}
+\end{eqnarray*}
+$p=18/12=3/2$、$\omega=2\pi×5=10\pi$、$\omega_{n}=\sqrt{750}$より$c=58.6[kg^{2}/s^{2}]$と求められる。
+\end{document}
