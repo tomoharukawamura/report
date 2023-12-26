@@ -1,0 +1,81 @@
+\documentclass[pdflatex,ja=standard,fleqn]{bxjsarticle}
+\usepackage{ascmac,amsmath,amssymb,type1cm, tikz, graphicx}
+\usetikzlibrary{intersections,calc,arrows.meta}
+
+\title{熱工学課題4}
+\author{J4-210447 川村朋広}
+\begin{document}
+\maketitle
+
+\section*{(1)}
+状態1における混合気体の体積を$v_{1}$、圧力を$p_{1}$、状態2における混合気体の体積を$v_{2}$、圧力を$p_{2}$とおく\\
+断熱変化であることと状態方程式より
+\begin{align*}
+    &\frac{p_{2}}{p_{1}}=\left(\frac{v_{1}}{v_{2}}\right)^{\kappa}=\epsilon^{\kappa}\\
+    &\frac{T_{2}}{T_{1}}=\frac{v_{2}}{v_{1}}\frac{p_{2}}{p_{1}}
+\end{align*}
+が成り立つ。したがって、
+\begin{align*}
+    &\frac{T_{2}}{T_{1}}=\epsilon^{\kappa-1}=9.5^{0.4}=2.46\\
+    &T_{2}=2.46T_{1}
+\end{align*}
+と求められる。
+\section*{(2)}
+状態3における混合気体の体積を$v_{3}$、圧力を$p_{3}$、状態4における混合気体の体積を$v_{4}$、圧力を$p_{4}$とおく\\
+断熱変化であることと状態方程式より
+\begin{align*}
+    &\frac{p_{3}}{p_{4}}=\left(\frac{v_{4}}{v_{3}}\right)^{\kappa}=\epsilon^{\kappa}\\
+    &\frac{T_{3}}{T_{4}}=\frac{v_{3}}{v_{4}}\frac{p_{3}}{p_{4}}
+\end{align*}
+が成り立つ。したがって、
+\begin{align*}
+    &\frac{T_{3}}{T_{4}}=\epsilon^{\kappa-1}=9.5^{0.4}=2.46\\
+    &T_{3}=2.46T_{4}
+\end{align*}
+と求められる。
+\section*{(3)}
+等積変化より
+\begin{eqnarray*}
+    \frac{P_{3}}{p_{2}}=\frac{T_{3}}{T_{2}}
+\end{eqnarray*}
+が成り立つ。したがって
+\begin{eqnarray*}
+    \frac{P_{3}}{p_{1}}&=&\frac{p_{2}}{p_{1}}\frac{p_{3}}{p_{2}}
+    =\epsilon^{\kappa}\frac{T_{3}}{T_{2}}
+    =\epsilon^{\kappa}\frac{T_{4}}{T_{1}}\\
+    &=&6.79
+\end{eqnarray*}
+つまり
+\begin{eqnarray*}
+    p_{3}=6.79p_{1}=0.68[MPa]
+\end{eqnarray*}
+\section*{(4)}
+熱力学第一法則より
+\begin{eqnarray*}
+    q_{H}=c_{v}(T_{3}-T_{2})
+\end{eqnarray*}
+である。また状態1における状態方程式より
+\begin{eqnarray*}
+    c_{v}=\frac{p_{1}v_{1}}{T_{1}}
+\end{eqnarray*}
+とあらわせるので、
+\begin{eqnarray*}
+    q_{H}&=&\frac{p_{1}v_{1}(T_{3}-T_{2})}{T_{1}}\\
+    &=&\frac{p_{1}v_{1}(T_{4}-T_{1})}{\epsilon^{\kappa-1}T_{1}}\\
+    &=&4.3×10^{-5}[KJ]
+\end{eqnarray*}
+と求められる。
+\section*{(5)}
+状態4から状態1の過程は等積変化である。熱力学第一法則より
+\begin{eqnarray*}
+    q_{L}=c_{v}(T_{4}-T_{2})
+\end{eqnarray*}
+である。したがって熱効率$\eta_{th}$は
+\begin{eqnarray*}
+    \eta_{th}&=&\frac{q_{H}-q_{L}}{q_{H}}
+    =1-\frac{T_{4}-T_{1}}{T_{3}-T_{2}}
+    =1-\frac{1}{\epsilon^{\kappa-1}}\\
+    &=&0.59
+\end{eqnarray*}
+と求められる。
+\end{document}
